@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { WordsModule } from './words/words.module';
+import { DictionaryModule } from './dictionary/dictionary.module';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { WordsModule } from './words/words.module';
       }),
       inject: [ConfigService],
     }),
-    WordsModule,
+    DictionaryModule,
   ],
   controllers: [],
   providers: [],
