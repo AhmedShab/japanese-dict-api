@@ -1,5 +1,6 @@
 import { Controller, Get, Post } from '@nestjs/common';
 import { DictionaryService } from './dictionary.service';
+import { CreateDictionaryDto } from './dto/create-dictionary.dto';
 
 @Controller('dictionary')
 export class DictionaryController {
@@ -11,7 +12,7 @@ export class DictionaryController {
   }
 
   @Post()
-  createDictionary() {
-    return this.dictionaryService.createDictionary();
+  createDictionary(createDictionaryDto: CreateDictionaryDto) {
+    return this.dictionaryService.createDictionary(createDictionaryDto);
   }
 }
