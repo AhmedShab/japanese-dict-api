@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { DictionaryService } from './dictionary.service';
 import { CreateDictionaryDto } from './dto/create-dictionary.dto';
 
@@ -12,7 +12,7 @@ export class DictionaryController {
   }
 
   @Post()
-  createDictionary(createDictionaryDto: CreateDictionaryDto) {
+  createDictionary(@Body() createDictionaryDto: CreateDictionaryDto) {
     return this.dictionaryService.createDictionary(createDictionaryDto);
   }
 }
